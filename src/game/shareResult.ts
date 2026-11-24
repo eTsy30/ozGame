@@ -113,15 +113,6 @@ async function createResultImage(snapshot: GameSnapshot) {
   );
 }
 
-type NavigatorWithFileShare = Navigator & {
-  share?: (data: {
-    files: File[];
-    title?: string;
-    text?: string;
-  }) => Promise<void>;
-
-  canShare?: (data: { files: File[] }) => boolean;
-};
 
 
 export async function shareGameResult(this: any, snapshot: GameSnapshot) {

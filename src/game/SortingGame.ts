@@ -1823,18 +1823,3 @@ private readonly update = (ticker: { deltaMS: number }) => {
     return from + (to - from) * progress;
   }
 }
-function formatMoney(kopecks: number): string {
-  const rubles = Math.floor(kopecks / 100);
-  const cents = kopecks % 100;
-
-  const rublesWord =
-    rubles % 10 === 1 && rubles % 100 !== 11
-      ? 'рубль'
-      : rubles % 10 >= 2 &&
-          rubles % 10 <= 4 &&
-          (rubles % 100 < 12 || rubles % 100 > 14)
-        ? 'рубля'
-        : 'рублей';
-
-  return `${rubles} ${rublesWord} ${cents} копеек`;
-}
